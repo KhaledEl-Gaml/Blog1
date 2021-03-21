@@ -1,44 +1,30 @@
-@extends('layouts.app')
- 
-@section('title')
- Show Post
-@endsection
- 
+ @extends('layouts.app')
+
+@section('title')Show Page @endsection
+
 @section('content')
- 
-<div class="card">
- <div class="card-header">
- Post Information
- </div>
- <div class="card-body">
- 
- <h5 class="card-title">Post Title</h5>
- <p class="card-text">{{ $post['title'] }}</p>
- 
- <h5 class="card-title">Post Description</h5>
- <p class="card-text">{{ $post['description'] }}</p>
- 
- </div>
+<div class="card" style="margin-bottom: 20px">
+    <div class="card-header">
+      Post Info
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" >Title:</h5>
+      <p class="card-text" >{{ $post->title }}</p>
+      <h5 class="card-title">Description:</h5>
+      <p class="card-text">{{ $post->description }}</p>
+    </div>
 </div>
- 
-<hr>
- 
 <div class="card">
- <div class="card-header">
- Post Creator
- </div>
- <div class="card-body">
- 
- <h5 class="card-title">Name</h5>
- <p class="card-text">{{ $post['title'] }}</p>
- 
- <h5 class="card-title">E-mail</h5>
- <p class="card-text">{{ $post['post_creator']['email'] }}</p>
- 
- <h5 class="card-title">Created At</h5>
- <p class="card-text">{{ $post['created_at'] }}</p>
- 
- </div>
+    <div class="card-header">
+      Post Creator Info
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Name:</h5>
+       <p class="card-text">{​​​​​{​​​​​ $post->user->name }​​​​​}​​​​​</p>    
+      <h5 class="card-title">Email:</h5>
+      <p class="card-text">{​​​​​{​​​​​ $post->user->email }​​​​​}​​​​​</p>
+      <h5 class="card-title">Created at:</h5>
+      <p class="card-text">{{ \Carbon\Carbon::parse($post->created_at, 'd/m/Y H:i:s')->isoFormat('ddd Do \of MMMM YYYY, h:mm:ss a') }}</p>
+    </div>
 </div>
- 
 @endsection
