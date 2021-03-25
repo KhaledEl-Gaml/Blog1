@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function store( StorePostRequest $request)
     {
-        
+        // dd($request);
         $requestData = $request->all();
         Post::create($requestData);
         return redirect()->route('posts.index');
@@ -90,10 +90,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $postId)
+    public function update(StorePostRequest $request, Post $post)
     {
         
-        $post = Post::find($postId);
+        // $post = Post::find($postId);
         $post->update($request->all());
 
         return redirect()->route('posts.index');

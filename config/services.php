@@ -30,4 +30,18 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github' => [
+        'client_id' => '9999f46f41c00cc893c5',
+        'client_secret' => 'b3e655ea451950d4571089aef48f2eeb64cae128',
+        'redirect' => 'http://localhost:8000/auth/callback',
+    ],
+
+
+    'google' => [
+        'client_id' => '1095148263324-7pmfae490tikq1oce7o5tsn11t5rj6s1.apps.googleusercontent.com',
+        'client_secret' => 'w1N2iYNemeuwz3sLBgt4HfQB',
+        'redirect' => 'http://localhost:8000/auth/callback/google',
+    ],
+
+
 ];

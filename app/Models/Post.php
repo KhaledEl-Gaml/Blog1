@@ -19,12 +19,9 @@ class Post extends Model
         'user_id',
         'slug'
     ];
-
-    public function user() //foreign key user_id
-    {
-        return $this->belongsTo(User::class);
+    public function user() { //Foreign Key UserID
+        return $this->belongsTo(User::class,"user_id", "id");
     }
-
     public function sluggable(): array {
         return [
             'slug' => [

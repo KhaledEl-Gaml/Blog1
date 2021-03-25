@@ -52,10 +52,22 @@
                         </div>
 
                         <div class="form-group row mb-0">
+
+                       
                             <div class="col-md-8 offset-md-4">
+                               <a href="/auth/redirect" class="btn btn-dark">
+                                    {{ __('Login_with GitHUb') }}
+                                </a>
+
+                                <a href="/auth/redirect" class="btn btn-danger">
+                                    {{ __('Login_with Google') }}
+                                </a>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+
+                                
+
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

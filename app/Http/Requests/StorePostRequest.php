@@ -28,14 +28,14 @@ class StorePostRequest extends FormRequest
         $rules =  [
             'description'   => 'required|min:10',
             'user_id'       => 'required|exists:users,id',
-            'title'      => 'required|min:3|unique:posts'
+            'title'      => 'required|min:3|'
         ];
      
         if ($this->getMethod() == 'POST') {
-            $rules += ['title'    => 'required|min:3|unique:posts'];
+            $rules += ['title'    => 'required|min:3|'];
         }
         else {
-           $rules += ['title'    => 'required|min:3|unique:posts,title,'.$this->post->id];
+           $rules += ['title'    => 'required|min:3|'.$this->post->id];
         }
         return $rules;
 
